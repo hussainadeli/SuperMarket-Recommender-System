@@ -141,7 +141,7 @@ def print_bill():
         with open('print.txt','a') as file:
             file.write(f'{curr_name[i]}\t\t\t{curr_quantity[i]}\t\t\t{curr_price[i]}\t\t\t{curr_amount[i]}\n')
     with open('print.txt','a') as file:
-        file.write(f'Payable Amount:\tRs.{sum(curr_amount)}\n')
+        file.write(f'Payable Amount:\tUSD.{sum(curr_amount)}\n')
     os.startfile("print.txt", "print")  #print bill using printer
     
 
@@ -192,7 +192,7 @@ def store() :
     y=int(y)
     z=int(z)
     w=z*y
-    l4=tk.Label(window1,text=(str(w)+"Rs."),bg="Light blue", fg=mycolor)
+    l4=tk.Label(window1,text=(str(w)+"USD."),bg="Light blue", fg=mycolor)
     l4.place(x=310,y=ind)
     l5=tk.Label(window1,text="Added.",bg="Light blue", fg=mycolor)
     l5.place(x=410,y=ind)
@@ -239,7 +239,7 @@ button1.place(x=400,y=400)
 def send_text() :
     text="Thank you for shopping with us! Here's your bill: "
     for i in range(len(curr_name)):
-        text+=str(curr_name[i])+" - Rs."+str(curr_amount[i])+"\n"
+        text+=str(curr_name[i])+" - USD."+str(curr_amount[i])+"\n"
     
     total_amount=0
     for k in curr_amount :
@@ -281,7 +281,7 @@ def subm() :
         ans=ans+k
     op=tk.Label(window1,text="Submission successful. Thank you for shopping! Click below button to print bill",bg="Light blue", fg=mycolor)
     op.place(x=50,y=ind+50)
-    op1=tk.Label(window1,text=("Total amount : "+ str(ans) + "Rs."),bg="Light blue", fg=mycolor)
+    op1=tk.Label(window1,text=("Total amount : "+ str(ans) + "USD."),bg="Light blue", fg=mycolor)
     op1.place(x=50,y=ind+80)
     button1=tk.Button(window1,text="Print Bill",command=print_bill, fg="White", bg=mycolor)
     button1.place(x=0,y=400)
